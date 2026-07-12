@@ -599,7 +599,7 @@
     <div class="contact-head reveal">Let's talk finance, banking, or the next opportunity.</div>
     <p class="contact-sub reveal">Open to roles in finance, operations, and management where analytical thinking and attention to detail can drive measurable results. Reach out any time.</p>
     <div class="contact-links reveal">
-      <a href="#" id="contactToggle" onclick="toggleContact(event)">Show email &amp; &nbsp; phone</a>
+      <a href="#" id="contactToggle" onclick="toggleContact(event)">Show email &amp; phone</a>
       <span id="contactDetails" style="display:none;"></span>
       <a href="https://www.linkedin.com/search/results/people/?keywords=Adeel%20Shafqat%20Khawaja" target="_blank" rel="noopener">LinkedIn — Adeel Shafqat Khawaja</a>
       <span style="color:rgba(246,243,236,0.55); font-family:'IBM Plex Mono', monospace; font-size:14px;">Karachi, Pakistan</span>
@@ -659,8 +659,9 @@
       var email = atob(_e);
       var phone = atob(_p);
       details.innerHTML =
-        '<a href="mailto:' + email + '">' + email + '</a>' +
-        '<a href="tel:' + phone.replace(/\s+/g,'') + '">' + phone + '</a>';
+    '<a href="mailto:' + email + '">' + email + '</a>' +
+    '<span class="contact-sep">·</span>' +
+    '<a href="tel:' + phone.replace(/\s+/g,'') + '">' + phone + '</a>';
       details.style.display = '';
       toggle.textContent = 'Hide email & phone';
       contactShown = true;
