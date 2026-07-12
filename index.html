@@ -347,7 +347,7 @@
   }
   .contact-sub{margin-top:18px; color:rgba(246,243,236,0.7); max-width:50ch; font-size:16px; line-height:1.7;}
   .contact-links{
-    margin-top:40px; display:flex; flex-wrap:wrap; gap:16px 40px;
+    margin-top:40px; display:flex; flex-wrap:wrap; align-items:center; gap:16px 40px;
   }
   .contact-links a{
     text-decoration:none; font-family:'IBM Plex Mono', monospace; font-size:14px;
@@ -355,6 +355,19 @@
     padding-bottom:4px;
   }
   .contact-links a:hover{color:var(--paper); border-color:var(--paper);}
+
+  /* Contact details (email + phone) revealed via JS */
+  #contactDetails{
+    display:inline-flex;
+    align-items:center;
+    gap:16px;
+  }
+  .contact-sep{
+    color:rgba(246,243,236,0.4);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+  }
+
   .foot-bottom{
     margin-top:80px; padding-top:24px; border-top:1px solid var(--line-soft);
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
@@ -659,9 +672,9 @@
       var email = atob(_e);
       var phone = atob(_p);
       details.innerHTML =
-    '<a href="mailto:' + email + '">' + email + '</a>' +
-    '<span class="contact-sep">·</span>' +
-    '<a href="tel:' + phone.replace(/\s+/g,'') + '">' + phone + '</a>';
+        '<a href="mailto:' + email + '">' + email + '</a>' +
+        '<span class="contact-sep">·</span>' +
+        '<a href="tel:' + phone.replace(/\s+/g,'') + '">' + phone + '</a>';
       details.style.display = '';
       toggle.textContent = 'Hide email & phone';
       contactShown = true;
